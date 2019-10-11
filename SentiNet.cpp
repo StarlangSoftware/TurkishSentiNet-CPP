@@ -91,3 +91,28 @@ vector<string> SentiNet::getNegatives() {
 vector<string> SentiNet::getNeutrals() {
     return getPolarity(PolarityType::NEUTRAL);
 }
+
+/**
+ * Method to write SentiSynsets to the specified file in the XML format.
+ *
+ * @param fileName file name to write XML files
+ */
+void SentiNet::saveAsXml(string fileName) {
+    ofstream outFile;
+    outFile.open(fileName, ofstream::out);
+    outFile << "<SYNSETS>\n";
+    for (auto& iterator : sentiSynSetList){
+        iterator.second.saveAsXml(outFile);
+    }
+    outFile << "</SYNSETS>\n";
+    outFile.close();
+}
+
+/**
+ * Removes specified SentiSynSet from the SentiSynSet list.
+ *
+ * @param sentiSynSet SentiSynSet to be added
+ */
+void SentiNet::removeSynSet(SentiSynSet sentiSynSet) {
+    sentiSynSetList.erase(sentiSynSet.getId());
+}

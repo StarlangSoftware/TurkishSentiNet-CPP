@@ -21,6 +21,7 @@ public:
     double getNegativeScore();
     string getId();
     PolarityType getPolarity();
+    void saveAsXml(ofstream& outfile);
 };
 
 

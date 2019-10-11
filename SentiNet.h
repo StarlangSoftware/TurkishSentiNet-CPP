@@ -20,6 +20,8 @@ public:
     vector<string> getPositives();
     vector<string> getNegatives();
     vector<string> getNeutrals();
+    void removeSynSet(SentiSynSet s);
+    void saveAsXml(string fileName);
 };
 
 

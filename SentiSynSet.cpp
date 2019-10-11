@@ -5,6 +5,7 @@
 //
 
 #include "SentiSynSet.h"
+#include <fstream>
 
 /**
  * Constructor of SentiSynSet. Gets input id, positiveScore, negativeScore and sets all corresponding attributes.
@@ -58,4 +59,17 @@ PolarityType SentiSynSet::getPolarity() {
  */
 string SentiSynSet::getId() {
     return id;
+}
+
+/**
+ * Method to write SentiSynSets to the specified file in the XML format.
+ *
+ * @param outfile BufferedWriter to write XML files
+ */
+void SentiSynSet::saveAsXml(ofstream &outfile) {
+    outfile << "<SYNSET>";
+    outfile << "<ID>" + id + "</ID>";
+    outfile << "<PSCORE>" << positiveScore << "</PSCORE>";
+    outfile << "<NSCORE>" << negativeScore << "</NSCORE>";
+    outfile << "</SYNSET>\n";
 }
