@@ -5,15 +5,11 @@
 #include "SentiNet.h"
 #include "XmlDocument.h"
 
-/**
- * Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
- * sentiSynSet read, it adds it to the sentiSynSetList.
- */
-SentiNet::SentiNet() {
+void SentiNet::loadSentiNet(string fileName) {
     XmlElement *rootNode, *sentiSynSetNode, *partNode;
     string id;
     double positiveScore = 0.0, negativeScore = 0.0;
-    XmlDocument doc = XmlDocument("turkish_sentinet.xml");
+    XmlDocument doc = XmlDocument(fileName);
     doc.parse();
     rootNode = doc.getFirstChild();
     sentiSynSetNode = rootNode->getFirstChild();
@@ -41,6 +37,22 @@ SentiNet::SentiNet() {
         positiveScore = 0.0;
         negativeScore = 0.0;
     }
+}
+
+/**
+ * Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file. For each
+ * sentiSynSet read, it adds it to the sentiSynSetList.
+ */
+SentiNet::SentiNet() {
+    loadSentiNet("turkish_sentinet.xml");
+}
+
+/**
+ * Constructor of Turkish SentiNet. Reads the file with name fileName. For each
+ * sentiSynSet read, it adds it to the sentiSynSetList.
+ */
+SentiNet::SentiNet(string fileName) {
+    loadSentiNet(fileName);
 }
 
 /**
