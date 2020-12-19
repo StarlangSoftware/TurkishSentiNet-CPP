@@ -7,7 +7,7 @@ include_directories(include)
 link_directories(library)
 
 add_library(SentiNet PolarityType.h SentiSynSet.cpp SentiSynSet.h SentiNet.cpp SentiNet.h)
-add_executable(TestSentiNet PolarityType.h SentiSynSet.cpp SentiSynSet.h SentiNet.cpp SentiNet.h TestSentiNet.cpp)
+add_executable(Test PolarityType.h SentiSynSet.cpp SentiSynSet.h SentiNet.cpp SentiNet.h Test/catch.hpp Test/SentiNetTest.cpp Test/SentiSynSetTest.cpp)
 
 target_link_libraries(SentiNet XmlParser)
-target_link_libraries(TestSentiNet XmlParser)
+target_link_libraries(Test XmlParser)
