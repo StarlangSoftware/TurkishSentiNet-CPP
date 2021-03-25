@@ -12,12 +12,13 @@ using namespace std;
 
 class SentiNet {
 private:
-    map<string, SentiSynSet> sentiSynSetList;
+    map<string, SentiSynSet*> sentiSynSetList;
     void loadSentiNet(string fileName);
 public:
     SentiNet();
+    ~SentiNet();
     explicit SentiNet(string fileName);
-    SentiSynSet getSentiSynSet(string id);
+    SentiSynSet* getSentiSynSet(string id);
     vector<string> getPolarity(PolarityType polarityType);
     vector<string> getPositives();
     vector<string> getNegatives();

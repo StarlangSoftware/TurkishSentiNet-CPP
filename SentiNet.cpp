@@ -30,7 +30,7 @@ void SentiNet::loadSentiNet(string fileName) {
             partNode = partNode->getNextSibling();
         }
         if (!id.empty()){
-            sentiSynSetList.emplace(id, SentiSynSet(id, positiveScore, negativeScore));
+            sentiSynSetList.emplace(id, new SentiSynSet(id, positiveScore, negativeScore));
         }
         sentiSynSetNode = sentiSynSetNode->getNextSibling();
         id = "";
@@ -60,8 +60,12 @@ SentiNet::SentiNet(string fileName) {
  * @param id Id of the searched SentiSynSet.
  * @return SentiSynSet with the given id.
  */
-SentiSynSet SentiNet::getSentiSynSet(string id) {
-    return sentiSynSetList.find(id)->second;
+SentiSynSet* SentiNet::getSentiSynSet(string id) {
+    if (sentiSynSetList.find(id) != sentiSynSetList.end()){
+        return sentiSynSetList.find(id)->second;
+    } else {
+        return nullptr;
+    }
 }
 
 /**
@@ -73,7 +77,7 @@ SentiSynSet SentiNet::getSentiSynSet(string id) {
 vector<string> SentiNet::getPolarity(PolarityType polarityType) {
     vector<string> result;
     for (auto& iterator : sentiSynSetList){
-        if (iterator.second.getPolarity() == polarityType){
+        if (iterator.second->getPolarity() == polarityType){
             result.emplace_back(iterator.first);
         }
     }
@@ -114,7 +118,7 @@ void SentiNet::saveAsXml(string fileName) {
     outFile.open(fileName, ofstream::out);
     outFile << "<SYNSETS>\n";
     for (auto& iterator : sentiSynSetList){
-        iterator.second.saveAsXml(outFile);
+        iterator.second->saveAsXml(outFile);
     }
     outFile << "</SYNSETS>\n";
     outFile.close();
@@ -127,4 +131,10 @@ void SentiNet::saveAsXml(string fileName) {
  */
 void SentiNet::removeSynSet(SentiSynSet sentiSynSet) {
     sentiSynSetList.erase(sentiSynSet.getId());
+}
+
+SentiNet::~SentiNet() {
+    for (auto& iterator : sentiSynSetList){
+        delete iterator.second;
+    }
 }

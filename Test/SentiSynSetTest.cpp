@@ -12,12 +12,12 @@ TEST_CASE("SentiSynSet-saveAsXml") {
     ofstream outFile;
     SentiNet sentiNet = SentiNet();
     outFile.open("test.xml", ofstream::out);
-    SentiSynSet sentiSynSet = sentiNet.getSentiSynSet("TUR10-1093230");
-    sentiSynSet.saveAsXml(outFile);
+    SentiSynSet* sentiSynSet = sentiNet.getSentiSynSet("TUR10-1093230");
+    sentiSynSet->saveAsXml(outFile);
     sentiSynSet = sentiNet.getSentiSynSet("TUR10-0730690");
-    sentiSynSet.saveAsXml(outFile);
+    sentiSynSet->saveAsXml(outFile);
     sentiSynSet = sentiNet.getSentiSynSet("TUR10-0969360");
-    sentiSynSet.saveAsXml(outFile);
+    sentiSynSet->saveAsXml(outFile);
     outFile.close();
     infile.open("test.xml", ifstream::in);
     getline(infile, line);
