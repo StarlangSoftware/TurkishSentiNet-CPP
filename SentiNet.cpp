@@ -61,7 +61,7 @@ SentiNet::SentiNet(string fileName) {
  * @return SentiSynSet with the given id.
  */
 SentiSynSet* SentiNet::getSentiSynSet(string id) {
-    if (sentiSynSetList.find(id) != sentiSynSetList.end()){
+    if (sentiSynSetList.contains(id)){
         return sentiSynSetList.find(id)->second;
     } else {
         return nullptr;

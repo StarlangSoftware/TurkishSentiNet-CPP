@@ -61,7 +61,7 @@ SentiLiteralNet::SentiLiteralNet(string fileName) {
  * @return SentiSynSet with the given name.
  */
 SentiLiteral* SentiLiteralNet::getSentiLiteral(string name) {
-    if (sentiLiteralList.find(name) != sentiLiteralList.end()){
+    if (sentiLiteralList.contains(name)){
         return sentiLiteralList.find(name)->second;
     } else {
         return nullptr;
