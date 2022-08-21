@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include "catch.hpp"
-#include "../SentiNet.h"
+#include "../src/SentiNet.h"
 
 TEST_CASE("SentiSynSet-saveAsXml") {
     string line;

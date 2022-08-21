@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../SentiLiteralNet.h"
+#include "../src/SentiLiteralNet.h"
 
 TEST_CASE("SentiLiteralNet-getPositives") {
     SentiLiteralNet sentiNet = SentiLiteralNet();
