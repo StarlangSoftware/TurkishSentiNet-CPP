@@ -6,12 +6,12 @@
 
 /**
  * Constructor of SentiLiteral. Gets input id, positiveScore, negativeScore and sets all corresponding attributes.
- * @param name Name of the SentiLiteral.
+ * @param _name Name of the SentiLiteral.
  * @param positiveScore Positive score of the SentiLiteral.
  * @param negativeScore Negative score of the SentiLiteral.
  */
-SentiLiteral::SentiLiteral(string name, double positiveScore, double negativeScore) {
-    this->name = std::move(name);
+SentiLiteral::SentiLiteral(const string& _name, double positiveScore, double negativeScore) {
+    this->name = _name;
     this->positiveScore = positiveScore;
     this->negativeScore = negativeScore;
 }

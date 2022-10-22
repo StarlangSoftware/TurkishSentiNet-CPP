@@ -8,13 +8,13 @@
 #include <fstream>
 
 /**
- * Constructor of SentiSynSet. Gets input id, positiveScore, negativeScore and sets all corresponding attributes.
- * @param id Id of the SentiSynSet.
+ * Constructor of SentiSynSet. Gets input _id, positiveScore, negativeScore and sets all corresponding attributes.
+ * @param _id Id of the SentiSynSet.
  * @param positiveScore Positive score of the SentiSynSet.
  * @param negativeScore Negative score of the SentiSynSet.
  */
-SentiSynSet::SentiSynSet(string id, double positiveScore, double negativeScore) {
-    this->id = std::move(id);
+SentiSynSet::SentiSynSet(const string& _id, double positiveScore, double negativeScore) {
+    this->id = _id;
     this->positiveScore = positiveScore;
     this->negativeScore = negativeScore;
 }
@@ -57,7 +57,7 @@ PolarityType SentiSynSet::getPolarity() {
  * Accessor for the id attribute.
  * @return Id of the SentiSynSet.
  */
-string SentiSynSet::getId() {
+string SentiSynSet::getId() const{
     return id;
 }
 

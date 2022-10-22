@@ -13,18 +13,18 @@ using namespace std;
 class SentiNet {
 private:
     map<string, SentiSynSet*> sentiSynSetList;
-    void loadSentiNet(string fileName);
+    void loadSentiNet(const string& fileName);
 public:
     SentiNet();
     ~SentiNet();
-    explicit SentiNet(string fileName);
-    SentiSynSet* getSentiSynSet(string id);
+    explicit SentiNet(const string& fileName);
+    SentiSynSet* getSentiSynSet(const string& id);
     vector<string> getPolarity(PolarityType polarityType);
     vector<string> getPositives();
     vector<string> getNegatives();
     vector<string> getNeutrals();
-    void removeSynSet(SentiSynSet s);
-    void saveAsXml(string fileName);
+    void removeSynSet(const SentiSynSet& s);
+    void saveAsXml(const string& fileName);
 };
 
 

@@ -5,7 +5,7 @@
 #include "SentiNet.h"
 #include "XmlDocument.h"
 
-void SentiNet::loadSentiNet(string fileName) {
+void SentiNet::loadSentiNet(const string& fileName) {
     XmlElement *rootNode, *sentiSynSetNode, *partNode;
     string id;
     double positiveScore = 0.0, negativeScore = 0.0;
@@ -51,7 +51,7 @@ SentiNet::SentiNet() {
  * Constructor of Turkish SentiNet. Reads the file with name fileName. For each
  * sentiSynSet read, it adds it to the sentiSynSetList.
  */
-SentiNet::SentiNet(string fileName) {
+SentiNet::SentiNet(const string& fileName) {
     loadSentiNet(fileName);
 }
 
@@ -60,7 +60,7 @@ SentiNet::SentiNet(string fileName) {
  * @param id Id of the searched SentiSynSet.
  * @return SentiSynSet with the given id.
  */
-SentiSynSet* SentiNet::getSentiSynSet(string id) {
+SentiSynSet* SentiNet::getSentiSynSet(const string& id) {
     if (sentiSynSetList.contains(id)){
         return sentiSynSetList.find(id)->second;
     } else {
@@ -113,7 +113,7 @@ vector<string> SentiNet::getNeutrals() {
  *
  * @param fileName file name to write XML files
  */
-void SentiNet::saveAsXml(string fileName) {
+void SentiNet::saveAsXml(const string& fileName) {
     ofstream outFile;
     outFile.open(fileName, ofstream::out);
     outFile << "<SYNSETS>\n";
@@ -129,7 +129,7 @@ void SentiNet::saveAsXml(string fileName) {
  *
  * @param sentiSynSet SentiSynSet to be added
  */
-void SentiNet::removeSynSet(SentiSynSet sentiSynSet) {
+void SentiNet::removeSynSet(const SentiSynSet& sentiSynSet) {
     sentiSynSetList.erase(sentiSynSet.getId());
 }
 

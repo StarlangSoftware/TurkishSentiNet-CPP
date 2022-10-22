@@ -5,7 +5,7 @@
 #include "SentiLiteralNet.h"
 #include "XmlDocument.h"
 
-void SentiLiteralNet::loadSentiNet(string fileName) {
+void SentiLiteralNet::loadSentiNet(const string& fileName) {
     XmlElement *rootNode, *sentiSynSetNode, *partNode;
     string name;
     double positiveScore = 0.0, negativeScore = 0.0;
@@ -51,7 +51,7 @@ SentiLiteralNet::SentiLiteralNet() {
  * Constructor of Turkish SentiNet. Reads the file with name fileName. For each
  * sentiLiteral read, it adds it to the sentiLiteralList.
  */
-SentiLiteralNet::SentiLiteralNet(string fileName) {
+SentiLiteralNet::SentiLiteralNet(const string& fileName) {
     loadSentiNet(fileName);
 }
 
@@ -60,7 +60,7 @@ SentiLiteralNet::SentiLiteralNet(string fileName) {
  * @param name Name of the searched SentiLiteral.
  * @return SentiSynSet with the given name.
  */
-SentiLiteral* SentiLiteralNet::getSentiLiteral(string name) {
+SentiLiteral* SentiLiteralNet::getSentiLiteral(const string& name) {
     if (sentiLiteralList.contains(name)){
         return sentiLiteralList.find(name)->second;
     } else {

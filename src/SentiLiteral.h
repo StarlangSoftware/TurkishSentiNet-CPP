@@ -16,7 +16,7 @@ private:
     double positiveScore;
     double negativeScore;
 public:
-    SentiLiteral(string name, double positiveScore, double negativeScore);
+    SentiLiteral(const string& _name, double positiveScore, double negativeScore);
     double getPositiveScore();
     double getNegativeScore();
     string getName();

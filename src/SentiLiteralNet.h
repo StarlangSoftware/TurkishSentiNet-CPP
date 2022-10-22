@@ -13,12 +13,12 @@ using namespace std;
 class SentiLiteralNet {
 private:
     map<string, SentiLiteral*> sentiLiteralList;
-    void loadSentiNet(string fileName);
+    void loadSentiNet(const string& fileName);
 public:
     SentiLiteralNet();
     ~SentiLiteralNet();
-    explicit SentiLiteralNet(string fileName);
-    SentiLiteral* getSentiLiteral(string name);
+    explicit SentiLiteralNet(const string& fileName);
+    SentiLiteral* getSentiLiteral(const string& name);
     vector<string> getPolarity(PolarityType polarityType);
     vector<string> getPositives();
     vector<string> getNegatives();
