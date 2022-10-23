@@ -20,7 +20,7 @@ SentiLiteral::SentiLiteral(const string& _name, double positiveScore, double neg
  * Accessor for the positiveScore attribute.
  * @return PositiveScore of the SentiLiteral.
  */
-double SentiLiteral::getPositiveScore() {
+double SentiLiteral::getPositiveScore() const{
     return positiveScore;
 }
 
@@ -28,7 +28,7 @@ double SentiLiteral::getPositiveScore() {
  * Accessor for the negativeScore attribute.
  * @return NegativeScore of the SentiLiteral.
  */
-double SentiLiteral::getNegativeScore() {
+double SentiLiteral::getNegativeScore() const{
     return negativeScore;
 }
 
@@ -38,7 +38,7 @@ double SentiLiteral::getNegativeScore() {
  * score and negative score are equal, the polarity is neutral.
  * @return PolarityType of the SentiLiteral.
  */
-PolarityType SentiLiteral::getPolarity() {
+PolarityType SentiLiteral::getPolarity() const{
     if (positiveScore > negativeScore){
         return PolarityType::POSITIVE;
     } else {
@@ -54,6 +54,6 @@ PolarityType SentiLiteral::getPolarity() {
  * Accessor for the id attribute.
  * @return Id of the SentiLiteral.
  */
-string SentiLiteral::getName() {
+string SentiLiteral::getName() const{
     return name;
 }

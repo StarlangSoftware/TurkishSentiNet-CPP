@@ -17,10 +17,10 @@ private:
     double negativeScore;
 public:
     SentiLiteral(const string& _name, double positiveScore, double negativeScore);
-    double getPositiveScore();
-    double getNegativeScore();
-    string getName();
-    PolarityType getPolarity();
+    double getPositiveScore() const;
+    double getNegativeScore() const;
+    string getName() const;
+    PolarityType getPolarity() const;
 };
 
 

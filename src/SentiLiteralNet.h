@@ -18,11 +18,11 @@ public:
     SentiLiteralNet();
     ~SentiLiteralNet();
     explicit SentiLiteralNet(const string& fileName);
-    SentiLiteral* getSentiLiteral(const string& name);
-    vector<string> getPolarity(PolarityType polarityType);
-    vector<string> getPositives();
-    vector<string> getNegatives();
-    vector<string> getNeutrals();
+    SentiLiteral* getSentiLiteral(const string& name) const;
+    vector<string> getPolarity(PolarityType polarityType) const;
+    vector<string> getPositives() const;
+    vector<string> getNegatives() const;
+    vector<string> getNeutrals() const;
 };
 
 

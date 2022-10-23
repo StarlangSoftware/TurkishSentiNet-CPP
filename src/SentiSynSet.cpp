@@ -23,7 +23,7 @@ SentiSynSet::SentiSynSet(const string& _id, double positiveScore, double negativ
  * Accessor for the positiveScore attribute.
  * @return PositiveScore of the SentiSynSet.
  */
-double SentiSynSet::getPositiveScore() {
+double SentiSynSet::getPositiveScore() const{
     return positiveScore;
 }
 
@@ -31,7 +31,7 @@ double SentiSynSet::getPositiveScore() {
  * Accessor for the negativeScore attribute.
  * @return NegativeScore of the SentiSynSet.
  */
-double SentiSynSet::getNegativeScore() {
+double SentiSynSet::getNegativeScore() const{
     return negativeScore;
 }
 
@@ -41,7 +41,7 @@ double SentiSynSet::getNegativeScore() {
  * score and negative score are equal, the polarity is neutral.
  * @return PolarityType of the sentiSynSet.
  */
-PolarityType SentiSynSet::getPolarity() {
+PolarityType SentiSynSet::getPolarity() const{
     if (positiveScore > negativeScore){
         return PolarityType::POSITIVE;
     } else {

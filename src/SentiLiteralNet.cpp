@@ -60,7 +60,7 @@ SentiLiteralNet::SentiLiteralNet(const string& fileName) {
  * @param name Name of the searched SentiLiteral.
  * @return SentiSynSet with the given name.
  */
-SentiLiteral* SentiLiteralNet::getSentiLiteral(const string& name) {
+SentiLiteral* SentiLiteralNet::getSentiLiteral(const string& name) const{
     if (sentiLiteralList.contains(name)){
         return sentiLiteralList.find(name)->second;
     } else {
@@ -74,7 +74,7 @@ SentiLiteral* SentiLiteralNet::getSentiLiteral(const string& name) {
  * @param polarityType PolarityTypes of the searched {@link SentiLiteral}s
  * @return A {@link vector} of id having polarityType polarityType.
  */
-vector<string> SentiLiteralNet::getPolarity(PolarityType polarityType) {
+vector<string> SentiLiteralNet::getPolarity(PolarityType polarityType) const{
     vector<string> result;
     for (auto& iterator : sentiLiteralList){
         if (iterator.second->getPolarity() == polarityType){
@@ -88,7 +88,7 @@ vector<string> SentiLiteralNet::getPolarity(PolarityType polarityType) {
  * Returns the ids of all positive {@link SentiLiteral}s.
  * @return A {@link vector} of ids of all positive {@link SentiLiteral}s.
  */
-vector<string> SentiLiteralNet::getPositives() {
+vector<string> SentiLiteralNet::getPositives() const{
     return getPolarity(PolarityType::POSITIVE);
 }
 
@@ -96,7 +96,7 @@ vector<string> SentiLiteralNet::getPositives() {
  * Returns the ids of all negative {@link SentiLiteral}s.
  * @return A {@link vector} of ids of all negative {@link SentiLiteral}s.
  */
-vector<string> SentiLiteralNet::getNegatives() {
+vector<string> SentiLiteralNet::getNegatives() const{
     return getPolarity(PolarityType::NEGATIVE);
 }
 
@@ -104,7 +104,7 @@ vector<string> SentiLiteralNet::getNegatives() {
  * Returns the ids of all neutral {@link SentiLiteral}s.
  * @return A {@link vector} of ids of all neutral {@link SentiLiteral}s.
  */
-vector<string> SentiLiteralNet::getNeutrals() {
+vector<string> SentiLiteralNet::getNeutrals() const{
     return getPolarity(PolarityType::NEUTRAL);
 }
 

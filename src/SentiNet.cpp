@@ -60,7 +60,7 @@ SentiNet::SentiNet(const string& fileName) {
  * @param id Id of the searched SentiSynSet.
  * @return SentiSynSet with the given id.
  */
-SentiSynSet* SentiNet::getSentiSynSet(const string& id) {
+SentiSynSet* SentiNet::getSentiSynSet(const string& id) const{
     if (sentiSynSetList.contains(id)){
         return sentiSynSetList.find(id)->second;
     } else {
@@ -74,7 +74,7 @@ SentiSynSet* SentiNet::getSentiSynSet(const string& id) {
  * @param polarityType PolarityTypes of the searched {@link SentiSynSet}s
  * @return A {@link vector} of id having polarityType polarityType.
  */
-vector<string> SentiNet::getPolarity(PolarityType polarityType) {
+vector<string> SentiNet::getPolarity(PolarityType polarityType) const{
     vector<string> result;
     for (auto& iterator : sentiSynSetList){
         if (iterator.second->getPolarity() == polarityType){
@@ -88,7 +88,7 @@ vector<string> SentiNet::getPolarity(PolarityType polarityType) {
  * Returns the ids of all positive {@link SentiSynSet}s.
  * @return A {@link vector} of ids of all positive {@link SentiSynSet}s.
  */
-vector<string> SentiNet::getPositives() {
+vector<string> SentiNet::getPositives() const{
     return getPolarity(PolarityType::POSITIVE);
 }
 
@@ -96,7 +96,7 @@ vector<string> SentiNet::getPositives() {
  * Returns the ids of all negative {@link SentiSynSet}s.
  * @return A {@link vector} of ids of all negative {@link SentiSynSet}s.
  */
-vector<string> SentiNet::getNegatives() {
+vector<string> SentiNet::getNegatives() const{
     return getPolarity(PolarityType::NEGATIVE);
 }
 
@@ -104,7 +104,7 @@ vector<string> SentiNet::getNegatives() {
  * Returns the ids of all neutral {@link SentiSynSet}s.
  * @return A {@link vector} of ids of all neutral {@link SentiSynSet}s.
  */
-vector<string> SentiNet::getNeutrals() {
+vector<string> SentiNet::getNeutrals() const{
     return getPolarity(PolarityType::NEUTRAL);
 }
 
