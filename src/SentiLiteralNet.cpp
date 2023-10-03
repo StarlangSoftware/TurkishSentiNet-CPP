@@ -69,10 +69,10 @@ SentiLiteral* SentiLiteralNet::getSentiLiteral(const string& name) const{
 }
 
 /**
- * Constructs and returns an {@link vector} of ids, which are the ids of the {@link SentiLiteral}s having polarity
+ * Constructs and returns an vector of ids, which are the ids of the SentiLiterals having polarity
  * polarityType.
- * @param polarityType PolarityTypes of the searched {@link SentiLiteral}s
- * @return A {@link vector} of id having polarityType polarityType.
+ * @param polarityType PolarityTypes of the searched SentiLiterals
+ * @return A vector of id having polarityType polarityType.
  */
 vector<string> SentiLiteralNet::getPolarity(PolarityType polarityType) const{
     vector<string> result;
@@ -85,24 +85,24 @@ vector<string> SentiLiteralNet::getPolarity(PolarityType polarityType) const{
 }
 
 /**
- * Returns the ids of all positive {@link SentiLiteral}s.
- * @return A {@link vector} of ids of all positive {@link SentiLiteral}s.
+ * Returns the ids of all positive SentiLiterals.
+ * @return A vector of ids of all positive SentiLiterals.
  */
 vector<string> SentiLiteralNet::getPositives() const{
     return getPolarity(PolarityType::POSITIVE);
 }
 
 /**
- * Returns the ids of all negative {@link SentiLiteral}s.
- * @return A {@link vector} of ids of all negative {@link SentiLiteral}s.
+ * Returns the ids of all negative SentiLiterals.
+ * @return A vector of ids of all negative SentiLiterals.
  */
 vector<string> SentiLiteralNet::getNegatives() const{
     return getPolarity(PolarityType::NEGATIVE);
 }
 
 /**
- * Returns the ids of all neutral {@link SentiLiteral}s.
- * @return A {@link vector} of ids of all neutral {@link SentiLiteral}s.
+ * Returns the ids of all neutral SentiLiterals.
+ * @return A vector of ids of all neutral SentiLiterals.
  */
 vector<string> SentiLiteralNet::getNeutrals() const{
     return getPolarity(PolarityType::NEUTRAL);
