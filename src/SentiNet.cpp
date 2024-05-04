@@ -5,6 +5,10 @@
 #include "SentiNet.h"
 #include "XmlDocument.h"
 
+/**
+ * Reads the Xml file that contains names of sentiSynSets and their positive, negative scores.
+ * @param fileName Xml document that contains the SentiNet.
+ */
 void SentiNet::loadSentiNet(const string& fileName) {
     XmlElement *rootNode, *sentiSynSetNode, *partNode;
     string id;

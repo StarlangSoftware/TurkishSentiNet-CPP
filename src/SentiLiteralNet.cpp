@@ -5,6 +5,10 @@
 #include "SentiLiteralNet.h"
 #include "XmlDocument.h"
 
+/**
+ * Reads the Xml file that contains names of sentiLiterals and their positive, negative scores.
+ * @param fileName Xml document that contains the SentiLiteralNet.
+ */
 void SentiLiteralNet::loadSentiNet(const string& fileName) {
     XmlElement *rootNode, *sentiSynSetNode, *partNode;
     string name;
