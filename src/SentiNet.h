@@ -24,7 +24,7 @@ public:
     vector<string> getNegatives() const;
     vector<string> getNeutrals() const;
     void removeSynSet(const SentiSynSet& s);
-    void saveAsXml(const string& fileName);
+    void saveAsXml(const string& fileName) const;
 };
 
 

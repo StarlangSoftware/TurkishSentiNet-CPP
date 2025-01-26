@@ -117,7 +117,7 @@ vector<string> SentiNet::getNeutrals() const{
  *
  * @param fileName file name to write XML files
  */
-void SentiNet::saveAsXml(const string& fileName) {
+void SentiNet::saveAsXml(const string& fileName) const {
     ofstream outFile;
     outFile.open(fileName, ofstream::out);
     outFile << "<SYNSETS>\n";
