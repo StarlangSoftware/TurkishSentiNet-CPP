@@ -6,6 +6,8 @@
 #define SENTINET_SENTILITERALNET_H
 
 #include <map>
+#include <vector>
+
 #include "SentiLiteral.h"
 
 using namespace std;

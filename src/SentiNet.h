@@ -6,6 +6,8 @@
 #define SENTINET_SENTINET_H
 
 #include <map>
+#include <vector>
+
 #include "SentiSynSet.h"
 
 using namespace std;
