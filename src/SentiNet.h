@@ -20,11 +20,11 @@ public:
     SentiNet();
     ~SentiNet();
     explicit SentiNet(const string& fileName);
-    SentiSynSet* getSentiSynSet(const string& id) const;
-    vector<string> getPolarity(PolarityType polarityType) const;
-    vector<string> getPositives() const;
-    vector<string> getNegatives() const;
-    vector<string> getNeutrals() const;
+    [[nodiscard]] SentiSynSet* getSentiSynSet(const string& id) const;
+    [[nodiscard]] vector<string> getPolarity(PolarityType polarityType) const;
+    [[nodiscard]] vector<string> getPositives() const;
+    [[nodiscard]] vector<string> getNegatives() const;
+    [[nodiscard]] vector<string> getNeutrals() const;
     void removeSynSet(const SentiSynSet& s);
     void saveAsXml(const string& fileName) const;
 };

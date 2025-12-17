@@ -17,11 +17,11 @@ private:
     double negativeScore;
 public:
     SentiSynSet(const string& _id, double positiveScore, double negativeScore);
-    double getPositiveScore() const;
-    double getNegativeScore() const;
-    string getId() const;
-    PolarityType getPolarity() const;
-    void saveAsXml(ofstream& outfile);
+    [[nodiscard]] double getPositiveScore() const;
+    [[nodiscard]] double getNegativeScore() const;
+    [[nodiscard]] string getId() const;
+    [[nodiscard]] PolarityType getPolarity() const;
+    void saveAsXml(ofstream& outfile) const;
 };
 
 

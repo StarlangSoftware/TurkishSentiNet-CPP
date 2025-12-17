@@ -1,5 +1,3 @@
-#include <utility>
-
 //
 // Created by Olcay Taner YILDIZ on 2019-08-25.
 //
@@ -66,7 +64,7 @@ string SentiSynSet::getId() const{
  *
  * @param outfile BufferedWriter to write XML files
  */
-void SentiSynSet::saveAsXml(ofstream &outfile) {
+void SentiSynSet::saveAsXml(ofstream &outfile) const {
     outfile << "<SYNSET>";
     outfile << "<ID>" + id + "</ID>";
     outfile << "<PSCORE>" << positiveScore << "</PSCORE>";
